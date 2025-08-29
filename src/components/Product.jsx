@@ -13,6 +13,9 @@ const Product = ({ productImg, title, price }) => {
         <Image imgSrc={productImg} className={"w-full"} />
         <Badge badtImg={ico} className={"absolute top-5 right-5 opacity-20 hover:opacity-100 duration-500"} />
         <div className="">
+          <div className="bg-black text-white text-center absolute w-[100%] top-[250px] py-2 opacity-0 hover:opacity-100 duration-300">
+            <h3>Add To Cart</h3>
+          </div>
           <h3 className="text-[16px] font-medium font-pop leading-[24px] py-3">
             {title}
           </h3>

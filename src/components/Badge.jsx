@@ -4,7 +4,7 @@ import Image from "./Image";
 const Badge = ({ className, badtImg, badText }) => {
   return (
     <div className={className}>
-      <Image imgSrc={badtImg} />
+      <Image imgSrc={badtImg}/>
       {badText}
     </div>
   );

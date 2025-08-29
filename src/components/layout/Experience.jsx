@@ -11,7 +11,7 @@ const Experience = () => {
             Categories
           </h3>
           <h1 className="text-[#FAFAFA] font-semibold text-[48px] font-int leading-[60px] w-[443px] py-[32px] pl-[50px]">Enhance Your Music Experience</h1>
-          <Button className="py-[16px] px-[45px] w-[171px] ml-[50px] text-[16px] font-medium font-pop leading-[24px] bg-[#00FF66] hover:bg-transparent border-[1px] hover:border-cyan-600 hover:text-shadow-white duration-500">
+          <Button className="py-[16px] px-[45px] w-[171px] ml-[50px] border-transparent text-[16px] font-medium font-pop leading-[24px] bg-[#00FF66] hover:bg-transparent border-[1px] hover:border-cyan-600 hover:text-shadow-white duration-500">
                Buy Now!
               </Button>
             </div>
