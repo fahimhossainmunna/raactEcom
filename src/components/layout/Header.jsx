@@ -29,18 +29,18 @@ const Header = () => {
             </Link>
           </div>
           <ul className="">
-            <div className="flex items-center gap-x-10 text-[16px] leading-[24px] font-pop">
+            <div className="flex items-center gap-x-5 text-[16px] leading-[24px] font-pop ">
               <Link to={"/"}>
-                <li>Home</li>
+                <li className="hover:text-black hover:font-semibold duration-150">Home</li>
               </Link>
               <Link to={"contact"}>
-                <li>Contact</li>
+                <li className="hover:text-black hover:font-semibold duration-150">Contact</li>
               </Link>
               <Link to={"about"}>
-                <li>About</li>
+                <li className="hover:text-black hover:font-semibold duration-150">About</li>
               </Link>
               <Link to={"signup"}>
-                <li>Sign Up</li>
+                <li className="hover:text-black hover:font-semibold duration-150">Sign Up</li>
               </Link>
             </div>
           </ul>

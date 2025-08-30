@@ -10,30 +10,30 @@ const Banner = () => {
       <Container>
         <div className="flex items-center justify-between mt-[40px]">
           <div className="">
-            <ul className="text-[16px] font-pop leading-[27px]">
+            <ul className="text-[14px] font-pop leading-[27px]">
                 <Link>
-                <li className="mt-6">Woman’s Fashion</li>
+                <li className="mt-6 hover:text-menuHover hover:font-bold duration-200">Woman’s Fashion</li>
                 </Link>
                 <Link>
-                <li className="mt-6">Men’s Fashion</li>
+                <li className="mt-6 hover:text-menuHover hover:font-bold duration-200">Men’s Fashion</li>
                 </Link>
                 <Link>
-                <li className="mt-6">Electronics</li>
+                <li className="mt-6 hover:text-menuHover hover:font-bold duration-200">Electronics</li>
                 </Link>
                 <Link>
-                <li className="mt-6">Medicine</li>
+                <li className="mt-6 hover:text-menuHover hover:font-bold duration-200">Medicine</li>
                 </Link>
                 <Link>
-                <li className="mt-6">Sports & Outdoor</li>
+                <li className="mt-6 hover:text-menuHover hover:font-bold duration-200">Sports & Outdoor</li>
                 </Link>
                 <Link>
-                <li className="mt-6">Baby’s & Toys</li>
+                <li className="mt-6 hover:text-menuHover hover:font-bold duration-200">Baby’s & Toys</li>
                 </Link>
                 <Link>
-                <li className="mt-6">Groceries & Pets</li>
+                <li className="mt-6 hover:text-menuHover hover:font-bold duration-200">Groceries & Pets</li>
                 </Link>
                 <Link>
-                <li className="mt-6">Health & Beauty</li>
+                <li className="mt-6 hover:text-menuHover hover:font-bold duration-200">Health & Beauty</li>
                 </Link>
             </ul>
           </div>
