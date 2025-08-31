@@ -6,10 +6,11 @@ import { FaStar, FaRegStar } from "react-icons/fa";
 
 // =============
 
+
 const Product = ({ productImg, title, price }) => {
   return (
     <>
-      <div className="w-1/4 relative">
+      <div className=" relative mx-2 ">
         <Image imgSrc={productImg} className={"w-full"} />
         <Badge badtImg={ico} className={"absolute top-5 right-5 opacity-20 hover:opacity-100 duration-500"} />
         <div className="">

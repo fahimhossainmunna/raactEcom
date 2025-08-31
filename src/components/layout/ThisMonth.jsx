@@ -7,8 +7,25 @@ import coat from "/src/assets/shirt.png";
 import bag from "/src/assets/bag.png";
 import cpu from "/src/assets/cpu.png";
 import books from "/src/assets/books.png";
+// ================
+// ================
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import NextArrow from "../NextArrow";
+import PrevArrow from "../PrevArrow";
 
+// ================
 const ThisMonth = () => {
+  var settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  };
   return (
     <>
       <div className="py-[100px]">
@@ -31,29 +48,54 @@ const ThisMonth = () => {
               </Button>
             </div>
           </div>
-
-          <Flex className={"gap-x-5"}>
-            <Product
-              productImg={coat}
-              title={"The north coat"}
-              price={"$260"}
-            />
-            <Product
-              productImg={bag}
-              title={"Gucci duffle bag"}
-              price={"$960"}
-            />
-            <Product
-              productImg={cpu}
-              title={"RGB liquid CPU Cooler"}
-              price={"$160"}
-            />
-            <Product
-              productImg={books}
-              title={"Small BookSelf"}
-              price={"$360"}
-            />
-          </Flex>
+          {/* ================= */}
+          <div className="-mx-2 py-8">
+            <Slider {...settings}>
+              <div>
+                <Product
+                  productImg={coat}
+                  title={"The north coat"}
+                  price={"$260"}
+                />
+              </div>
+              <div>
+                <Product
+                  productImg={bag}
+                  title={"Gucci duffle bag"}
+                  price={"$960"}
+                />
+              </div>
+              <div>
+                <Product
+                  productImg={cpu}
+                  title={"RGB liquid CPU Cooler"}
+                  price={"$160"}
+                />
+              </div>
+              <div>
+                <Product
+                  productImg={books}
+                  title={"Small BookSelf"}
+                  price={"$360"}
+                />
+              </div>
+              <div>
+                <Product
+                  productImg={bag}
+                  title={"Gucci duffle bag"}
+                  price={"$960"}
+                />
+              </div>
+              <div>
+                <Product
+                  productImg={books}
+                  title={"Small BookSelf"}
+                  price={"$360"}
+                />
+              </div>
+            </Slider>
+          </div>
+          {/* ================= */}
         </Container>
       </div>
     </>

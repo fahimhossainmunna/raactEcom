@@ -10,7 +10,25 @@ import facewash from "/src/assets/facewash.png";
 import Button from "../Button";
 
 // ===============
+// ===============
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import NextArrow from "../NextArrow";
+import PrevArrow from "../PrevArrow";
+
+// ===============
+
 const OurProducts = () => {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />
+  };
   return (
     <>
       <div className="py-[60px]">
@@ -33,55 +51,105 @@ const OurProducts = () => {
             </div>
           </div>
           {/* ============= */}
-          <Flex className={"gap-x-5"}>
-            <Product
-              productImg={dogfood}
-              title={"Breed Dry Dog Food"}
-              price={"$100"}
-            />
-            <Product
-              productImg={camera}
-              title={"CANON EOS DSLR Camera"}
-              price={"$360"}
-            />
-            <Product
-              productImg={laptop}
-              title={"ASUS FHD Gaming Laptop"}
-              price={"$700"}
-            />
-            <Product
-              productImg={facewash}
-              title={"Curology Product Set "}
-              price={"$500"}
-            />
-          </Flex>
-          <Flex className={"gap-x-5 mt-[70px]"}>
-            <Product
-              productImg={dogfood}
-              title={"Breed Dry Dog Food"}
-              price={"$100"}
-            />
-            <Product
-              productImg={camera}
-              title={"CANON EOS DSLR Camera"}
-              price={"$360"}
-            />
-            <Product
-              productImg={laptop}
-              title={"ASUS FHD Gaming Laptop"}
-              price={"$700"}
-            />
-            <Product
-              productImg={facewash}
-              title={"Curology Product Set "}
-              price={"$500"}
-            />
-          </Flex>
+
+          {/* ======== */}
+          <Slider {...settings}>
+            <div>
+              <Product
+                productImg={dogfood}
+                title={"Breed Dry Dog Food"}
+                price={"$100"}
+              />
+            </div>
+            <div>
+              <Product
+                productImg={camera}
+                title={"CANON EOS DSLR Camera"}
+                price={"$360"}
+              />
+            </div>
+            <div>
+              <Product
+                productImg={laptop}
+                title={"ASUS FHD Gaming Laptop"}
+                price={"$700"}
+              />
+            </div>
+            <div>
+              <Product
+                productImg={facewash}
+                title={"Curology Product Set "}
+                price={"$500"}
+              />
+            </div>
+            <div>
+              <Product
+                productImg={laptop}
+                title={"ASUS FHD Gaming Laptop"}
+                price={"$700"}
+              />
+            </div>
+            <div>
+              <Product
+                productImg={camera}
+                title={"CANON EOS DSLR Camera"}
+                price={"$360"}
+              />
+            </div>
+          </Slider>
+          {/* ======== */}
+          <div className="mt-[100px]">
+            <Slider {...settings}>
+              <div>
+                <Product
+                  productImg={dogfood}
+                  title={"Breed Dry Dog Food"}
+                  price={"$100"}
+                />
+              </div>
+              <div>
+                <Product
+                  productImg={camera}
+                  title={"CANON EOS DSLR Camera"}
+                  price={"$360"}
+                />
+              </div>
+              <div>
+                <Product
+                  productImg={laptop}
+                  title={"ASUS FHD Gaming Laptop"}
+                  price={"$700"}
+                />
+              </div>
+              <div>
+                <Product
+                  productImg={facewash}
+                  title={"Curology Product Set "}
+                  price={"$500"}
+                />
+              </div>
+              <div>
+                <Product
+                  productImg={dogfood}
+                  title={"Breed Dry Dog Food"}
+                  price={"$100"}
+                />
+              </div>
+              <div>
+                <Product
+                  productImg={laptop}
+                  title={"ASUS FHD Gaming Laptop"}
+                  price={"$700"}
+                />
+              </div>
+            </Slider>
+          </div>
+
+        
           <div className="flex justify-center mt-12">
-               <Button className="py-[16px] px-[45px] text-[16px] font-medium font-pop leading-[24px] bg-[#DB4444] hover:bg-transparent border-[1px] hover:border-black hover:text-black duration-500 w-[234px]">
-                View All Products
-              </Button>
-              
+            <Button className="py-[16px] px-[45px] text-[16px] font-medium font-pop leading-[24px] bg-[#DB4444] hover:bg-transparent border-[1px] hover:border-black hover:text-black duration-500 w-[234px]">
+              View All Products
+            </Button>
           </div>
         </Container>
       </div>
