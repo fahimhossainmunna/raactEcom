@@ -76,13 +76,13 @@ const Header = () => {
             <div className="flex items-center gap-x-3">
               <CiHeart />
               <IoCart />
-              <div className="relative">
+              <div className="absolute hover:text-2xl duration-300 transition-all right-18 top-22">
                 <button onClick={handleBtn}>
                   <FaBarsProgress />
                 </button>
               </div>
               {show && (
-                <div className="bg-[#2C2C2C] absolute py-2 top-[22%] right-18 z-10 transition-all  rounded-[5px] text-white w-[200px] text-center">
+                <div className="bg-[#2C2C2C] absolute py-2 top-[18%] right-17 z-10 transition-all  rounded-[5px] text-white w-[200px] text-center">
                   <ul>
                     <Link to={"/"}>
                       <li className="block py-2  rounded-[5px] text-white text-[16px] font-pop text-center transition-all duration-300 hover:bg-[#4E4E4E] hover:animate-pulse mx-1">
