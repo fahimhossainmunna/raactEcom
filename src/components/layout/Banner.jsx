@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../Container";
 import { Link } from "react-router-dom";
 
-// ===========
+// =========== Slider =============
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -16,105 +16,57 @@ const Banner = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-     speed: 800,
-    autoplaySpeed: 2000,
+    speed: 800,
+    autoplaySpeed: 3000,
     cssEase: "linear",
     appendDots: (dots) => (
-      <div
-        style={{
-          backgroundColor: "transparent",
-
-          padding: "30px",
-        }}
-      >
-        <ul style={{ margin: "0px" }}> {dots} </ul>
+      <div style={{ backgroundColor: "transparent", padding: "25px" }}>
+        <ul className="flex justify-center gap-2 mt-2">{dots}</ul>
       </div>
     ),
-    customPaging: (i) => (
-      <div
-        style={{
-          width: "5px",
-          height: "5px",
-          color: "white",
-          border: "1px cyan solid",
-          borderRadius: "50%",
-        }}
-      >
-        
-      </div>
+    customPaging: () => (
+      <div className="w-[6px] h-[6px] border border-gray-400 rounded-full hover:bg-gray-700 transition-all duration-300"></div>
     ),
   };
+
   return (
     <>
-    <div className="py-[20px]"></div>
+      <div className="py-[20px]"></div>
       <Container>
-        <Flex>
-          <div className="flex w-[30%] items-center  mt-[40px]">
-            <div className="">
-              <ul className="text-[14px] font-pop leading-[27px]">
-                <Link>
-                  <li className="mt-6 hover:text-menuHover hover:font-bold duration-200">
-                    Woman’s Fashion
-                  </li>
-                </Link>
-                <Link>
-                  <li className="mt-6 hover:text-menuHover hover:font-bold duration-200">
-                    Men’s Fashion
-                  </li>
-                </Link>
-                <Link>
-                  <li className="mt-6 hover:text-menuHover hover:font-bold duration-200">
-                    Electronics
-                  </li>
-                </Link>
-                <Link>
-                  <li className="mt-6 hover:text-menuHover hover:font-bold duration-200">
-                    Medicine
-                  </li>
-                </Link>
-                <Link>
-                  <li className="mt-6 hover:text-menuHover hover:font-bold duration-200">
-                    Sports & Outdoor
-                  </li>
-                </Link>
-                <Link>
-                  <li className="mt-6 hover:text-menuHover hover:font-bold duration-200">
-                    Baby’s & Toys
-                  </li>
-                </Link>
-                <Link>
-                  <li className="mt-6 hover:text-menuHover hover:font-bold duration-200">
-                    Groceries & Pets
-                  </li>
-                </Link>
-                <Link>
-                  <li className="mt-6 hover:text-menuHover hover:font-bold duration-200">
-                    Health & Beauty
-                  </li>
-                </Link>
+        <Flex className="flex-col lg:flex-row gap-6 items-start">
+          {/* Sidebar Menu */}
+          <div className="flex w-full lg:w-[25%] items-start justify-center lg:justify-start">
+            <div className="w-full lg:w-[90%]">
+              <ul className="text-[15px] font-medium font-pop leading-[30px] text-gray-700 text-center lg:text-left border-r lg:border-r border-gray-200 pr-4">
+                <Link><li className="mt-3 hover:text-[#DB4444] hover:font-semibold duration-200 cursor-pointer">Woman’s Fashion</li></Link>
+                <Link><li className="mt-3 hover:text-[#DB4444] hover:font-semibold duration-200 cursor-pointer">Men’s Fashion</li></Link>
+                <Link><li className="mt-3 hover:text-[#DB4444] hover:font-semibold duration-200 cursor-pointer">Electronics</li></Link>
+                <Link><li className="mt-3 hover:text-[#DB4444] hover:font-semibold duration-200 cursor-pointer">Medicine</li></Link>
+                <Link><li className="mt-3 hover:text-[#DB4444] hover:font-semibold duration-200 cursor-pointer">Sports & Outdoor</li></Link>
+                <Link><li className="mt-3 hover:text-[#DB4444] hover:font-semibold duration-200 cursor-pointer">Baby’s & Toys</li></Link>
+                <Link><li className="mt-3 hover:text-[#DB4444] hover:font-semibold duration-200 cursor-pointer">Groceries & Pets</li></Link>
+                <Link><li className="mt-3 hover:text-[#DB4444] hover:font-semibold duration-200 cursor-pointer">Health & Beauty</li></Link>
               </ul>
             </div>
           </div>
-          <div className="w-[70%]">
+
+          {/* Slider */}
+          <div className="w-full lg:w-[75%] rounded-lg overflow-hidden">
             <Slider {...settings}>
-              <div>
-                <div className="bg-[url('/src/assets/inpfive.png')] bg-cover bg-center bg-no-repeat py-[250px]"></div>
-              </div>
-              <div>
-                <div className="bg-[url('/src/assets/inpsix.png')] bg-cover bg-center bg-no-repeat py-[250px] rounded-[5px]"></div>
-              </div>
-              <div>
-                <div className="bg-[url('/src/assets/inpfore.png')] bg-cover bg-center bg-no-repeat py-[250px] rounded-[5px]"></div>
-              </div>
-              <div>
-                <div className="bg-[url('/src/assets/ipthree.png')] bg-cover bg-center bg-no-repeat py-[250px] rounded-[5px]"></div>
-              </div>
-              <div>
-                <div className="bg-[url('/src/assets/ipfore.png')] bg-cover bg-center bg-no-repeat py-[250px] rounded-[5px]"></div>
-              </div>
-              <div>
-                <div className="bg-[url('/src/assets/ipfive.png')] bg-cover bg-center bg-no-repeat py-[250px] rounded-[5px]"></div>
-              </div>
+              {[
+                "inpfive.png",
+                "inpsix.png",
+                "inpfore.png",
+                "ipthree.png",
+                "ipfore.png",
+                "ipfive.png",
+              ].map((img, i) => (
+                <div key={i}>
+                  <div
+                    className={`bg-[url('/src/assets/${img}')] bg-cover bg-center bg-no-repeat py-[180px] sm:py-[220px] md:py-[250px] rounded-lg`}
+                  ></div>
+                </div>
+              ))}
             </Slider>
           </div>
         </Flex>
