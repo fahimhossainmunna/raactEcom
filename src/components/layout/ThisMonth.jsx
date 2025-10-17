@@ -26,19 +26,25 @@ const ThisMonth = () => {
     prevArrow: <PrevArrow />,
     responsive: [
       {
-        breakpoint: 1280,
+        breakpoint: 1280, // large screen
         settings: {
           slidesToShow: 3,
         },
       },
       {
-        breakpoint: 1024,
+        breakpoint: 1024, // medium
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 640,
+        breakpoint: 768, // tablet
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 640, // mobile
         settings: {
           slidesToShow: 1,
         },
@@ -48,28 +54,30 @@ const ThisMonth = () => {
 
   return (
     <>
-      <div className="py-[100px]">
+      <div className="py-[60px] md:py-[100px]">
         <Container>
-          <div className=" flex items-center gap-4">
-            <div className="py-[20px] bg-[#DB4444] w-[20px] rounded-[5px]"></div>
-            <h3 className="text-[16px] font-semibold font-pop text-[#DB4444]">
+          <div className="flex items-center gap-3 sm:gap-4 flex-wrap px-4 md:px-0">
+            <div className="py-[20px] bg-[#DB4444] w-[18px] sm:w-[20px] rounded-[5px]"></div>
+            <h3 className="text-[14px] sm:text-[16px] font-semibold font-pop text-[#DB4444]">
               This Month
             </h3>
           </div>
-          <div className="flex items-center justify-between">
-            <div className="">
-              <h1 className="text-[36px] text-[#000] font-semibold font-int leading-[48px] w-[400px] my-8">
+
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 px-4 md:px-0">
+            <div>
+              <h1 className="text-[28px] sm:text-[32px] md:text-[36px] text-[#000] font-semibold font-int leading-[38px] sm:leading-[44px] md:leading-[48px] md:w-[400px] my-6 md:my-8 text-center md:text-left">
                 Best Selling Products
               </h1>
             </div>
-            <div className="">
-              <Button className="py-[16px] px-[45px] text-[16px] font-medium font-pop leading-[24px] bg-[#DB4444] hover:bg-transparent border-[1px] hover:border-black hover:text-black duration-500">
+            <div className="text-center md:text-right">
+              <Button className="py-[12px] sm:py-[14px] md:py-[16px] px-[35px] sm:px-[40px] md:px-[45px] text-[14px] sm:text-[15px] md:text-[16px] font-medium font-pop leading-[22px] sm:leading-[24px] bg-[#DB4444] hover:bg-transparent border-[1px] hover:border-black hover:text-black duration-500">
                 View All
               </Button>
             </div>
           </div>
+
           {/* ================= */}
-          <div className="-mx-2 py-8">
+          <div className="relative py-8 px-2 sm:px-4 md:px-0">
             <Slider {...settings}>
               <div>
                 <Product

@@ -9,7 +9,27 @@ import Slider from "react-slick";
 import Flex from "../Flex";
 // ===========
 
+// MARK: 🛠️ Apnar shob image gulo ekhane import korun
+// Ei path gulo (../assets/...) apnar shothik file structure onujayi change korte hobe.
+import bannerImage1 from "/src/assets/inpfive.png";
+import bannerImage2 from "/src/assets/inpsix.png";
+import bannerImage3 from "/src/assets/inpfore.png";
+import bannerImage4 from "/src/assets/ipthree.png";
+import bannerImage5 from "/src/assets/ipfore.png";
+import bannerImage6 from "/src/assets/ipfive.png";
+
+
 const Banner = () => {
+  // MARK: 🛠️ Image path string-er jaygay imported variables gulo byabohar korun
+  const bannerImages = [
+    bannerImage1,
+    bannerImage2,
+    bannerImage3,
+    bannerImage4,
+    bannerImage5,
+    bannerImage6,
+  ];
+
   var settings = {
     dots: true,
     infinite: true,
@@ -34,7 +54,7 @@ const Banner = () => {
       <div className="py-[20px]"></div>
       <Container>
         <Flex className="flex-col lg:flex-row gap-6 items-start">
-          {/* Sidebar Menu */}
+          {/* Sidebar Menu - No change needed here */}
           <div className="flex w-full lg:w-[25%] items-start justify-center lg:justify-start">
             <div className="w-full lg:w-[90%]">
               <ul className="text-[15px] font-medium font-pop leading-[30px] text-gray-700 text-center lg:text-left border-r lg:border-r border-gray-200 pr-4">
@@ -53,17 +73,13 @@ const Banner = () => {
           {/* Slider */}
           <div className="w-full lg:w-[75%] rounded-lg overflow-hidden">
             <Slider {...settings}>
-              {[
-                "inpfive.png",
-                "inpsix.png",
-                "inpfore.png",
-                "ipthree.png",
-                "ipfore.png",
-                "ipfive.png",
-              ].map((img, i) => (
+              {/* MARK: 🛠️ Image Array-ti ekhane byabohar kora hoche */}
+              {bannerImages.map((imgUrl, i) => (
                 <div key={i}>
                   <div
-                    className={`bg-[url('/src/assets/${img}')] bg-cover bg-center bg-no-repeat py-[180px] sm:py-[220px] md:py-[250px] rounded-lg`}
+                    // MARK: 🛠️ Inline style use kore background image set kora holo
+                    style={{ backgroundImage: `url(${imgUrl})` }}
+                    className="bg-cover bg-center bg-no-repeat py-[180px] sm:py-[220px] md:py-[250px] rounded-lg"
                   ></div>
                 </div>
               ))}
